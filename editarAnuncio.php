@@ -20,12 +20,12 @@
 
         $extensao = strtolower(strrchr($_FILES['foto']['name'], '.'));
         $novo_nome = md5(time()) . $extensao;
-        $diretorio = "img/produtos/";
+        $diretorio = "./img/produtos/";
 
         move_uploaded_file($_FILES['foto']['tmp_name'], $diretorio.$novo_nome);
 
         if ($_FILES['foto']['name'] != null) {
-            $query = mysqli_query($mysqli, "update produto set tipo_veiculo = '$tipoVeiculo', descricao = '$descricao', quilometragem = '$quilometragem', cor = '$cor', preco = '$preco', foto = '$novo_nome'  where id_produto = '$idProduto'");
+            $query = mysqli_query($mysqli, "update produto set tipo_veiculo = '$tipoVeiculo', descricao = '$descricao', quilometragem = '$quilometragem', cor = '$cor', preco = '$preco', foto = '$novo_nome' where id_produto = '$idProduto'");
         } else {
             $query = mysqli_query($mysqli, "update produto set tipo_veiculo = '$tipoVeiculo', descricao = '$descricao', quilometragem = '$quilometragem', cor = '$cor', preco = '$preco', foto = '$fotoAtual' where id_produto = '$idProduto'");
         }

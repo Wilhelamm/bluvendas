@@ -28,7 +28,7 @@
         } else {
             $extensao = strtolower(strrchr($_FILES['foto']['name'], '.'));
             $novo_nome = md5(time()) . $extensao;
-            $diretorio = "img/produtos/";
+            $diretorio = "./img/produtos/";
 
             move_uploaded_file($_FILES['foto']['tmp_name'], $diretorio.$novo_nome);
 
