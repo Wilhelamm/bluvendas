@@ -78,17 +78,6 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-12 col-md-7">
-                            <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
-                                <form class="d-inline-block">
-                                    <select class="form-select form-select-sm">
-                                        <option>Ordenar pelo nome</option>
-                                        <option>Ordenar pelo menor preço</option>
-                                        <option>Ordenar pelo maior preço</option>
-                                    </select>
-                                </form>
-                            </div>
-                        </div>
                     </div>
 
                     <hr mt-3>
