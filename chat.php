@@ -17,11 +17,11 @@
         if (isset($_POST['enviarMensagem'])) {
             $remetente = $_COOKIE['login'];
             $mensagem = $_POST['mensagem'];
-            
-            
+               
             $query = mysqli_query($mysqli, "insert into chat (id_contato, remetente, mensagem)
             values ('$idContato', '$remetente', '$mensagem')");    
 
+            $listarChat = mysqli_query($mysqli, "select * from chat where id_contato = '$idContato'");
         }
     }
 ?>

@@ -20,14 +20,12 @@ preco                CHAR(100)  not null,
 foto                 CHAR(100)  not null
 );
 
-
 create table contato (
 id_contato           INTEGER AUTO_INCREMENT PRIMARY KEY,
 id_produto           INTEGER not null,
 id_vendedor          INTEGER not null,
 id_comprador         INTEGER not null
 );
-
 
 create table chat (
 id_chat              INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -36,3 +34,17 @@ remetente            CHAR(100) not null,
 mensagem             CHAR(255)
 );
 
+alter table produto add constraint fk_vendedor_prod 
+foreign key (id_vendedor) references cadastro (id_cadastro) on delete cascade;
+
+alter table contato add constraint fk_produto
+foreign key (id_produto) references produto (id_produto) on delete cascade;
+
+alter table contato add constraint fk_vendedor 
+foreign key (id_vendedor) references cadastro (id_cadastro) on delete cascade;
+
+alter table contato add constraint fk_comprador 
+foreign key (id_comprador) references cadastro (id_cadastro) on delete cascade;
+
+alter table chat add constraint fk_contato
+foreign key (id_contato) references contato (id_contato) on delete cascade;

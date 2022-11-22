@@ -19,7 +19,7 @@
             echo  "<script>alert('A data de nascimento está vazio!');</script>";
         } else {
            $query = mysqli_query($mysqli, "insert into cadastro (nome, cpf, data_nascimento, senha, email) values ('$nome', '$cpf', '$dataNascimento', '$senha', '$email')");
-           include('login.php');
+           header("Location: ./login.php");
         }
     }   
 ?>
